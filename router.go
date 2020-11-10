@@ -29,3 +29,7 @@ func SetUpBookRouter(group *gin.RouterGroup) {
 	group.PUT("/:id")    //update
 	group.DELETE("/:id") //delete
 }
+
+func SetUpCategoryRouter(group *gin.RouterGroup) {
+
+}
