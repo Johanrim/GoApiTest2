@@ -16,15 +16,15 @@ func main() {
 	database := "test"
 
 	maria = new(MariaDB)
-	err := maria.connect(userName, password, host, database)
+	err := maria.Connect(userName, password, host, database)
 	if err != nil {
 		log.Fatalf("database connection error: %v", err)
 	}
-	defer maria.close()
+	defer maria.Close()
 
 	maria.Migrate(testMigrations)
 
 	router = gin.Default()
 	SetUpRouter(router)
-	router.Run(":8080")
+	router.Run(":8000")
 }
