@@ -39,8 +39,8 @@ type CreateCategoryFormat struct {
 }
 
 type UpdateCategoryFormat struct {
-	ID   uint   `json:"id" binding:"required"`
-	Name string `json:"name"`
+	// ID   uint   `json:"id" binding:"required"`
+	Name string `json:"name" binding:"required"`
 }
 
 type RemoveCategoryFormat struct {
@@ -49,8 +49,9 @@ type RemoveCategoryFormat struct {
 
 // category response
 type GetCategoryResFormat struct {
-	ID   uint   `json:"category_id"`
-	Name string `json:"name"`
+	// ID   uint   `json:"category_id"`
+	// Name string `json:"name"`
+	Category Category `json:"category"`
 }
 
 type GetCategoryListResFormat struct {
@@ -58,13 +59,16 @@ type GetCategoryListResFormat struct {
 }
 
 type CreateCategoryResFormat struct {
+	Message  string   `json:"message"`
 	Category Category `json:"category"`
 }
 
 type UpdateCategoryResFormat struct {
+	Message  string   `json:"message"`
 	Category Category `json:"category"`
 }
 
 type RemoveCategoryResFormat struct {
-	Category Category `json:"category"`
+	Message string `json:"message"`
+	// Category Category `json:"category"`
 }
