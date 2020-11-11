@@ -21,6 +21,12 @@ type GetBookListResFormat struct {
 	Books []Book `json:"books"`
 }
 
+type GetAllBookFormat struct {
+	ID       uint   `json:"book_id"`
+	Name     string `json:"name"`
+	Category string `json:"category"`
+}
+
 type GetOneBookResFormat struct {
 	Book Book `json:"book"`
 }

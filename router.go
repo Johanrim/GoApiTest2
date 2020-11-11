@@ -23,11 +23,11 @@ func SetUpRouter(r *gin.Engine) {
 }
 
 func SetUpBookRouter(group *gin.RouterGroup) {
-	group.GET("")        //list
-	group.GET("/:id")    //detail
-	group.POST("")       // create
-	group.PUT("/:id")    //update
-	group.DELETE("/:id") //delete
+	group.GET("", GetBookList)    //list
+	group.GET("/:id", GetOneBook) //detail
+	group.POST("")                // create
+	group.PUT("/:id")             //update
+	group.DELETE("/:id")          //delete
 }
 
 func SetUpCategoryRouter(group *gin.RouterGroup) {
