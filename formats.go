@@ -2,8 +2,8 @@ package main
 
 // book request
 type CreateBookFormat struct {
-	Name     string `json:"id" binding:"required"`
-	Category uint   `json:"category" binding:"required"`
+	Name     string   `json:"name" binding:"required"`
+	Category Category `json:"category" binding:"required"`
 }
 
 type UpdateBookFormat struct {
