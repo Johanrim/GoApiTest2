@@ -12,7 +12,7 @@ type MariaDB struct {
 	DB *gorm.DB
 }
 
-func (db *MariaDB) Connect(user, password, host, dbName string) (err error) {
+func (db *MariaDB) connect(user, password, host, dbName string) (err error) {
 	if user == "" {
 		return errors.New("username is required")
 	}
@@ -33,7 +33,7 @@ func (db *MariaDB) Connect(user, password, host, dbName string) (err error) {
 	return
 }
 
-func (db *MariaDB) Close() {
+func (db *MariaDB) close() {
 	err := db.DB.Close()
 	if err != nil {
 		log.Println("Maria DB close connection error:", err)

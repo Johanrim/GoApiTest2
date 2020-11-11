@@ -2,8 +2,6 @@ package main
 
 import (
 	"time"
-
-	"gorm.io/gorm"
 )
 
 // type User struct {
@@ -27,13 +25,13 @@ import (
 // }
 
 type Book struct {
-	ID         uint           `gorm:"primaryKey"`
-	Name       string         `gorm:"not null" json:"name"`
-	CategoryID uint           `gzorm:"not null" json:"category"`
-	Category   Category       `gorm:"ForeignKey:CategoryID;" json:"-"`
-	CreatedAt  time.Time      `json:"created_at"`
-	UpdatedAt  time.Time      `json:"updated_at"`
-	DeletedAt  gorm.DeletedAt `gorm:"index"`
+	ID         uint      `gorm:"primaryKey"`
+	Name       string    `gorm:"not null" json:"name"`
+	CategoryID uint      `gzorm:"not null" json:"category"`
+	Category   Category  `gorm:"ForeignKey:CategoryID;" json:"-"`
+	CreatedAt  time.Time `json:"created_at"`
+	UpdatedAt  time.Time `json:"updated_at"`
+	// DeletedAt  gorm.DeletedAt `gorm:"index"`
 	// AuthorID   uint           `gorm:"not null" json:"author"`
 	// Author     Author         `gorm:"ForeignKey:AuthorID;"json:"-"`
 }

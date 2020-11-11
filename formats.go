@@ -49,7 +49,8 @@ type RemoveCategoryFormat struct {
 
 // category response
 type GetCategoryResFormat struct {
-	Category Category `json:"category"`
+	ID   uint   `json:"category_id"`
+	Name string `json:"name"`
 }
 
 type GetCategoryListResFormat struct {

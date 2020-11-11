@@ -16,11 +16,11 @@ func main() {
 	database := "test"
 
 	maria = new(MariaDB)
-	err := maria.Connect(userName, password, host, database)
+	err := maria.connect(userName, password, host, database)
 	if err != nil {
 		log.Fatalf("database connection error: %v", err)
 	}
-	defer maria.Close()
+	defer maria.close()
 
 	maria.Migrate(testMigrations)
 

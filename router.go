@@ -31,5 +31,9 @@ func SetUpBookRouter(group *gin.RouterGroup) {
 }
 
 func SetUpCategoryRouter(group *gin.RouterGroup) {
-
+	group.GET("")        //list
+	group.GET("/:id")    //detail
+	group.POST("")       // create
+	group.PUT("/:id")    //update
+	group.DELETE("/:id") //delete
 }
